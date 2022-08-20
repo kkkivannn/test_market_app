@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../theme/theme_data.dart';
 import '../widget/home_screen.dart';
 
 class HomePage extends StatelessWidget {
@@ -7,10 +8,11 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Ecommerce Concept ',
-      home: HomeScreen(),
+      home: const HomeScreen(),
+      theme: basicTheme(),
     );
   }
 }
