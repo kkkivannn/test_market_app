@@ -1,4 +1,7 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Project imports:
 import 'package:test_market_app/constants.dart';
 
 ThemeData basicTheme() => ThemeData(
@@ -16,9 +19,5 @@ ThemeData basicTheme() => ThemeData(
           fontWeight: FontWeight.w500,
           color: kPrimaryColor,
         ),
-        // headline3: TextStyle(
-        //   fontFamily: 'MarkPro',
-        //   fontSize:
-        // ),
       ),
     );
