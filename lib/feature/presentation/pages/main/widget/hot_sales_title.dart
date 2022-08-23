@@ -4,19 +4,17 @@ import 'package:flutter/material.dart';
 // Project imports:
 import 'package:test_market_app/constants.dart';
 
-class SelectCategoryTitle extends StatelessWidget {
-  const SelectCategoryTitle({Key? key}) : super(key: key);
+class HotSalesTitle extends StatelessWidget {
+  const HotSalesTitle({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(
-        vertical: 10,
-      ),
+      padding: const EdgeInsets.only(bottom: 8),
       child: Row(
         children: [
           Text(
-            'Select Category',
+            'Hot Sales',
             style: TextStyle(
               fontFamily: 'MarkPro',
               fontSize: 25,
@@ -30,7 +28,7 @@ class SelectCategoryTitle extends StatelessWidget {
               print('lol');
             },
             child: const Text(
-              'view all',
+              'see more',
               style: TextStyle(
                 fontFamily: 'MarkPro',
                 fontSize: 15,

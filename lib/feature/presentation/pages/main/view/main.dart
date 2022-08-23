@@ -8,8 +8,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:test_market_app/constants.dart';
 import 'package:test_market_app/feature/presentation/pages/main/controller/main_page_cubit.dart';
 import 'package:test_market_app/feature/presentation/pages/main/controller/main_page_state.dart';
+import 'package:test_market_app/feature/presentation/pages/main/widget/best_seller_title.dart';
 import 'package:test_market_app/feature/presentation/pages/main/widget/card_category.dart';
 import 'package:test_market_app/feature/presentation/pages/main/widget/card_phone.dart';
+import 'package:test_market_app/feature/presentation/pages/main/widget/hot_sales_title.dart';
 import 'package:test_market_app/feature/presentation/pages/main/widget/search_and_filter.dart';
 import 'package:test_market_app/feature/presentation/pages/main/widget/select_category_title.dart';
 import 'package:test_market_app/feature/presentation/pages/main/widget/town_selector.dart';
@@ -42,12 +44,108 @@ class MainPage extends StatelessWidget {
               body: ListView(
                 physics: const BouncingScrollPhysics(),
                 padding: const EdgeInsets.symmetric(horizontal: 17),
-                shrinkWrap: true,
+                shrinkWrap: false,
                 children: [
                   const TownSelector(),
                   const SelectCategoryTitle(),
                   const CardCategory(),
                   const SearchAndFilter(),
+                  const HotSalesTitle(),
+                  SizedBox(
+                    height: 200,
+                    child: PageView(
+                      physics: const BouncingScrollPhysics(),
+                      scrollDirection: Axis.horizontal,
+                      children: List.generate(
+                        state.bestSellerAndHotSalesEntiti.hotSalesModel.length,
+                        (index) => Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 10),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            image: DecorationImage(
+                              image: NetworkImage(
+                                state.bestSellerAndHotSalesEntiti
+                                    .hotSalesModel[index].image,
+                              ),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          child: Stack(
+                            children: [
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 30, bottom: 30),
+                                child: Align(
+                                  alignment: Alignment.bottomLeft,
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      SizedBox(
+                                        width: 200,
+                                        child: Text(
+                                          state
+                                                      .bestSellerAndHotSalesEntiti
+                                                      .hotSalesModel[index]
+                                                      .name ==
+                                                  'Samsung Galaxy A71'
+                                              ? ''
+                                              : state
+                                                  .bestSellerAndHotSalesEntiti
+                                                  .hotSalesModel[index]
+                                                  .name,
+                                          style: const TextStyle(
+                                            fontFamily: 'MarkPro',
+                                            fontSize: 25,
+                                            fontWeight: FontWeight.w700,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ),
+                                      Text(
+                                        state.bestSellerAndHotSalesEntiti
+                                            .hotSalesModel[index].subtitle,
+                                        style: const TextStyle(
+                                          fontFamily: 'MarkPro',
+                                          fontSize: 11,
+                                          fontWeight: FontWeight.w400,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        height: 20,
+                                      ),
+                                      Container(
+                                        height: 25,
+                                        width: 100,
+                                        decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius:
+                                                BorderRadius.circular(5)),
+                                        child: Center(
+                                          child: Text(
+                                            'Buy now!',
+                                            style: TextStyle(
+                                              fontFamily: 'MarkPro',
+                                              fontSize: 11,
+                                              fontWeight: FontWeight.w700,
+                                              color: kPrimaryColor,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  const BestSellerTitle(),
                   GridView.builder(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
