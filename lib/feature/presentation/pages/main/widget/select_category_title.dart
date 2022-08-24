@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 // Project imports:
 import 'package:test_market_app/constants.dart';
+import 'package:test_market_app/feature/presentation/pages/main/widget/filter_bottom_sheet.dart';
 
 class SelectCategoryTitle extends StatelessWidget {
   const SelectCategoryTitle({Key? key}) : super(key: key);
@@ -27,7 +28,13 @@ class SelectCategoryTitle extends StatelessWidget {
           const Spacer(),
           TextButton(
             onPressed: () {
-              print('lol');
+              showModalBottomSheet<void>(
+                  isScrollControlled: true,
+                  context: context,
+                  backgroundColor: Colors.transparent,
+                  builder: (context) {
+                    return const FilterBottomSheet();
+                  });
             },
             child: const Text(
               'view all',

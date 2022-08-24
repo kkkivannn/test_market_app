@@ -71,21 +71,16 @@ class SearchAndFilter extends StatelessWidget {
           const SizedBox(
             width: 11,
           ),
-          GestureDetector(
-            onTap: () {
-              print('lol');
-            },
-            child: Container(
-              height: 34,
-              width: 34,
-              decoration: BoxDecoration(
-                color: kSecondaryColor,
-                borderRadius: BorderRadius.circular(34),
-              ),
-              child: Center(
-                child: SvgPicture.asset(
-                  SvgImg.filter,
-                ),
+          Container(
+            height: 34,
+            width: 34,
+            decoration: BoxDecoration(
+              color: kSecondaryColor,
+              borderRadius: BorderRadius.circular(34),
+            ),
+            child: Center(
+              child: SvgPicture.asset(
+                SvgImg.filter,
               ),
             ),
           )

@@ -52,7 +52,7 @@ class MainPage extends StatelessWidget {
                   const SearchAndFilter(),
                   const HotSalesTitle(),
                   SizedBox(
-                    height: 200,
+                    height: 180,
                     child: PageView(
                       physics: const BouncingScrollPhysics(),
                       scrollDirection: Axis.horizontal,
@@ -138,7 +138,38 @@ class MainPage extends StatelessWidget {
                                     ],
                                   ),
                                 ),
-                              )
+                              ),
+                              (state.bestSellerAndHotSalesEntiti
+                                          .hotSalesModel[index].isNew ==
+                                      true)
+                                  ? Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: 15, left: 25),
+                                      child: Align(
+                                        alignment: Alignment.topLeft,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            color: kSecondaryColor,
+                                            borderRadius:
+                                                BorderRadius.circular(27),
+                                          ),
+                                          child: const Padding(
+                                            padding: EdgeInsets.symmetric(
+                                                vertical: 8, horizontal: 3),
+                                            child: Text(
+                                              'New',
+                                              style: TextStyle(
+                                                fontFamily: 'MarkPro',
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.white,
+                                                fontSize: 10,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    )
+                                  : Container(),
                             ],
                           ),
                         ),

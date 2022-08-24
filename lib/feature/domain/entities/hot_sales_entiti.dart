@@ -1,6 +1,6 @@
 class HotSalesEntiti {
   final String image;
-  final bool? isNew;
+  final bool isNew;
   final String name;
   final String subtitle;
   final bool isBuy;

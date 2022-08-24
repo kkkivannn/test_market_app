@@ -14,4 +14,5 @@ abstract class SvgImg {
   static const String search = 'icons/Search.svg';
   static const String filter = 'icons/filter.svg';
   static const String pouringLike = 'icons/pouringHeart.svg';
+  static const String back = 'icons/back.svg';
 }
