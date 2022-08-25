@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 // Project imports:
 import 'package:test_market_app/feature/presentation/pages/home_page/view/home.dart';
 import 'package:test_market_app/feature/presentation/pages/main/controller/main_page_cubit.dart';
+import 'package:test_market_app/feature/presentation/pages/product_page/controller/product_page_cubit.dart';
 import 'package:test_market_app/injection.container.dart';
 import 'injection.container.dart' as di;
 
@@ -24,6 +25,9 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider<MainPageCubit>(
           create: (context) => sl<MainPageCubit>(),
+        ),
+        BlocProvider<ProductPageCubit>(
+          create: (context) => sl<ProductPageCubit>(),
         )
       ],
       child: const HomePage(),

@@ -14,10 +14,9 @@ class BestSellerAndHotSelesModels extends BestSellerAndHotSalesEntiti {
   factory BestSellerAndHotSelesModels.fromJson(Map<String, dynamic> json) {
     return BestSellerAndHotSelesModels(
       bestSellerModel: List<BestSellerModel>.from(
-        (json['best_seller'] as List<dynamic>)
-            .map((json) => BestSellerModel.fromJson(json))
-            .toList(),
-      ),
+          (json['best_seller'] as List<dynamic>)
+              .map((json) => BestSellerModel.fromJson(json))
+              .toList()),
       hotSalesModel: List<HotSalesModel>.from(
         (json['home_store'] as List<dynamic>)
             .map((json) => HotSalesModel.fromJson(json))

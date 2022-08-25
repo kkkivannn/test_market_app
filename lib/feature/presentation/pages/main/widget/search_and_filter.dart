@@ -18,54 +18,54 @@ class SearchAndFilter extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            height: 35,
-            width: 300,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(40),
-              border: Border.all(color: Colors.white),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(.1),
-                  blurRadius: 4,
-                ),
-              ],
-            ),
-            child: Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: SvgPicture.asset(
-                    SvgImg.search,
-                    height: 16,
-                    width: 16,
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(40),
+                border: Border.all(color: Colors.white),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(.1),
+                    blurRadius: 4,
                   ),
-                ),
-                Expanded(
-                  child: TextField(
-                    textCapitalization: TextCapitalization.words,
-                    cursorWidth: 1,
-                    cursorColor: kPrimaryColor,
-                    style: const TextStyle(
-                      fontFamily: "MarkPro",
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12,
+                ],
+              ),
+              child: Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: SvgPicture.asset(
+                      SvgImg.search,
+                      height: 16,
+                      width: 16,
                     ),
-                    decoration: const InputDecoration(
-                      isDense: true,
-                      enabledBorder: InputBorder.none,
-                      focusedBorder: InputBorder.none,
-                      hintText: "Search",
-                      hintStyle: TextStyle(
+                  ),
+                  Expanded(
+                    child: TextField(
+                      textCapitalization: TextCapitalization.words,
+                      cursorWidth: 1,
+                      cursorColor: kPrimaryColor,
+                      style: const TextStyle(
                         fontFamily: "MarkPro",
                         fontWeight: FontWeight.w400,
                         fontSize: 12,
                       ),
+                      decoration: const InputDecoration(
+                        isDense: true,
+                        enabledBorder: InputBorder.none,
+                        focusedBorder: InputBorder.none,
+                        hintText: "Search",
+                        hintStyle: TextStyle(
+                          fontFamily: "MarkPro",
+                          fontWeight: FontWeight.w400,
+                          fontSize: 12,
+                        ),
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
           const SizedBox(

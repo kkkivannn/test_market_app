@@ -2,14 +2,13 @@
 import 'package:test_market_app/feature/domain/entities/hot_sales_entiti.dart';
 
 class HotSalesModel extends HotSalesEntiti {
-  HotSalesModel(
-      {required final String image,
-      required final bool isNew,
-      required final String name,
-      required final String subtitle,
-      required final bool isBuy,
-      required})
-      : super(
+  HotSalesModel({
+    required final String image,
+    required final bool isNew,
+    required final String name,
+    required final String subtitle,
+    required final bool isBuy,
+  }) : super(
           image: image,
           isNew: isNew,
           name: name,
