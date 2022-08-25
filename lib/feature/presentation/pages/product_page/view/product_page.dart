@@ -8,6 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:test_market_app/constants.dart';
 import 'package:test_market_app/feature/presentation/pages/product_page/controller/product_page_cubit.dart';
 import 'package:test_market_app/feature/presentation/pages/product_page/controller/product_page_state.dart';
+import 'package:test_market_app/feature/presentation/pages/product_page/widget/product_details.dart';
 import 'package:test_market_app/feature/presentation/pages/product_page/widget/product_details_title.dart';
 import '../widget/product_pageview.dart';
 
@@ -47,6 +48,15 @@ class _ProductPageState extends State<ProductPage> {
                   ProductPageview(
                     image: state.productEntiti.images,
                     count: state.productEntiti.images.length,
+                  ),
+                  ProductDetails(
+                    isFavorite: state.productEntiti.isFavorites,
+                    titleProduct: state.productEntiti.title,
+                    ratingUsers: state.productEntiti.rating,
+                    memory: state.productEntiti.sd,
+                    sd: state.productEntiti.ssd,
+                    camera: state.productEntiti.camera,
+                    cpu: state.productEntiti.cpu,
                   ),
                 ],
               ),

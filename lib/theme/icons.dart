@@ -15,4 +15,8 @@ abstract class SvgImg {
   static const String filter = 'icons/filter.svg';
   static const String pouringLike = 'icons/pouringHeart.svg';
   static const String back = 'icons/back.svg';
+  static const String camera = 'icons/camera.svg';
+  static const String cpu = 'icons/cpu.svg';
+  static const String memory = 'icons/memory.svg';
+  static const String sd = 'icons/sd.svg';
 }
