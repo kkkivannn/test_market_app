@@ -32,8 +32,10 @@ class _ProductPageviewState extends State<ProductPageview> {
   double currentPageValue = 0.0;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 335,
+    return ConstrainedBox(
+      constraints: const BoxConstraints(
+        maxHeight: 335,
+      ),
       child: PageView(
         scrollDirection: Axis.horizontal,
         physics: const BouncingScrollPhysics(),

@@ -57,6 +57,7 @@ class _ProductPageState extends State<ProductPage> {
                     sd: state.productEntiti.ssd,
                     camera: state.productEntiti.camera,
                     cpu: state.productEntiti.cpu,
+                    capacity: state.productEntiti.capacity,
                   ),
                 ],
               ),

@@ -19,4 +19,5 @@ abstract class SvgImg {
   static const String cpu = 'icons/cpu.svg';
   static const String memory = 'icons/memory.svg';
   static const String sd = 'icons/sd.svg';
+  static const String select = 'icons/select.svg';
 }

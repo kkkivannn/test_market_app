@@ -35,31 +35,40 @@ class CharacteristicProduct extends StatelessWidget {
         "title": sd,
       },
     ];
-    return Expanded(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 25),
-        child: SizedBox(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: List.generate(
-                characteristics.length,
-                (index) => Column(
-                      children: [
-                        SvgPicture.asset(
-                          characteristics[index]['icon'],
-                          color: const Color(0xffB7B7B7),
-                        ),
-                        Text(
-                          characteristics[index]['title'],
-                          style: const TextStyle(
-                            fontFamily: 'MarkPro',
-                            fontSize: 11,
-                            fontWeight: FontWeight.w400,
-                            color: Color(0xffB7B7B7),
-                          ),
-                        ),
-                      ],
-                    )),
+    return Padding(
+      padding: const EdgeInsets.only(
+        left: 30,
+        right: 30,
+        top: 20,
+      ),
+      child: SizedBox(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: List.generate(
+            characteristics.length,
+            (index) => Column(
+              children: [
+                SvgPicture.asset(
+                  characteristics[index]['icon'],
+                  color: const Color(0xffB7B7B7),
+                  height: 20,
+                  width: 20,
+                ),
+                const SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  characteristics[index]['title'],
+                  style: const TextStyle(
+                    fontFamily: 'MarkPro',
+                    fontSize: 11,
+                    fontWeight: FontWeight.w400,
+                    color: Color(0xffB7B7B7),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

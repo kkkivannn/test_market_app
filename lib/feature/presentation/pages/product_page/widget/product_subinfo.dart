@@ -30,55 +30,56 @@ class _SubInfoState extends State<SubInfo> {
     return SizedBox(
       height: 33,
       child: Padding(
-          padding: const EdgeInsets.only(right: 35, left: 35),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: List.generate(
-              subInfo.length,
-              (index) => InkWell(
-                onTap: () {
-                  setState(() {
-                    if (onTap[index] == false) {
-                      for (var i = 0; i < onTap.length; i++) {
-                        if (onTap[i] == true) {
-                          onTap[i] = false;
-                        }
+        padding: const EdgeInsets.only(right: 35, left: 35),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: List.generate(
+            subInfo.length,
+            (index) => InkWell(
+              onTap: () {
+                setState(() {
+                  if (onTap[index] == false) {
+                    for (var i = 0; i < onTap.length; i++) {
+                      if (onTap[i] == true) {
+                        onTap[i] = false;
                       }
-                      onTap[index] = true;
-                    } else {
-                      onTap[index] = false;
                     }
-                  });
-                },
-                child: SizedBox(
-                  width: 90,
-                  child: Column(
-                    children: [
-                      Text(
-                        subInfo[index]['title'],
-                        style: TextStyle(
-                          fontFamily: 'MarkPro',
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: kPrimaryColor,
-                        ),
+                    onTap[index] = true;
+                  } else {
+                    onTap[index] = false;
+                  }
+                });
+              },
+              child: SizedBox(
+                width: 90,
+                child: Column(
+                  children: [
+                    Text(
+                      subInfo[index]['title'],
+                      style: TextStyle(
+                        fontFamily: 'MarkPro',
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: kPrimaryColor,
                       ),
-                      onTap[index] == false
-                          ? Container()
-                          : Container(
-                              height: 2,
-                              width: 85,
-                              decoration: BoxDecoration(
-                                color: kSecondaryColor,
-                                borderRadius: BorderRadius.circular(2),
-                              ),
+                    ),
+                    onTap[index] == false
+                        ? Container()
+                        : Container(
+                            height: 2,
+                            width: 85,
+                            decoration: BoxDecoration(
+                              color: kSecondaryColor,
+                              borderRadius: BorderRadius.circular(2),
                             ),
-                    ],
-                  ),
+                          ),
+                  ],
                 ),
               ),
             ),
-          )),
+          ),
+        ),
+      ),
     );
   }
 }
