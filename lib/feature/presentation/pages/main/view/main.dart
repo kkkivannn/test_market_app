@@ -27,7 +27,7 @@ class MainPage extends StatelessWidget {
           context
               .read<MainPageCubit>()
               .fetchBestSeller('654bd15e-b121-49ba-a588-960956b15175');
-        } else if (state is MainPageError) {
+        } else if (state is MainPageErrorState) {
           return SafeArea(
             child: Scaffold(
               body: Center(
@@ -38,7 +38,7 @@ class MainPage extends StatelessWidget {
               ),
             ),
           );
-        } else if (state is MainPageLoaded) {
+        } else if (state is MainPageLoadedState) {
           return SafeArea(
             child: Scaffold(
               body: ListView(

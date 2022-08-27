@@ -24,16 +24,16 @@ class MainPageLoadingState extends MainPageState {
   List<Object?> get props => [oldBestSeller];
 }
 
-class MainPageLoaded extends MainPageState {
+class MainPageLoadedState extends MainPageState {
   final BestSellerAndHotSalesEntiti bestSellerAndHotSalesEntiti;
-  const MainPageLoaded(this.bestSellerAndHotSalesEntiti);
+  const MainPageLoadedState(this.bestSellerAndHotSalesEntiti);
   @override
   List<Object?> get props => [bestSellerAndHotSalesEntiti];
 }
 
-class MainPageError extends MainPageState {
+class MainPageErrorState extends MainPageState {
   final String message;
-  const MainPageError({required this.message});
+  const MainPageErrorState({required this.message});
   @override
   List<Object?> get props => [message];
 }

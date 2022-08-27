@@ -12,19 +12,18 @@ class MainPageCubit extends Cubit<MainPageState> {
   Future<void> fetchBestSeller(String endpoint) async {
     try {
       emit(MainPageEmptyState());
-      final loadedBestSellerOrFailure = await getBestSeller(
-          const EndpointParams(
-              endpoint: "654bd15e-b121-49ba-a588-960956b15175"));
+      final loadedBestSellerOrFailure =
+          await getBestSeller(EndpointParams(endpoint: endpoint));
       loadedBestSellerOrFailure.fold(
         (error) => emit(
-          const MainPageError(message: SERVER_FAILURE_MESSAGE),
+          const MainPageErrorState(message: SERVER_FAILURE_MESSAGE),
         ),
         (bestSellerAndHotSelesEntiti) => emit(
-          MainPageLoaded(bestSellerAndHotSelesEntiti),
+          MainPageLoadedState(bestSellerAndHotSelesEntiti),
         ),
       );
     } catch (_) {
-      emit(const MainPageError(message: SERVER_FAILURE_MESSAGE));
+      emit(const MainPageErrorState(message: SERVER_FAILURE_MESSAGE));
     }
   }
 }

@@ -28,7 +28,6 @@ class BestSellerRepositoryimpl implements BestSellerRepository {
       final bestSellerModel = await bestSeller();
       return Right(bestSellerModel);
     } catch (e) {
-      print(e);
       return Left(ServerFailure());
     }
   }

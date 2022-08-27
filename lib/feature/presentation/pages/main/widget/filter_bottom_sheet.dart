@@ -41,7 +41,7 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
               children: [
                 CustomBackButton(
                   color: kPrimaryColor,
-                  icon: SvgImg.back,
+                  icon: SvgImg.exit,
                 ),
                 const Spacer(),
                 Text(

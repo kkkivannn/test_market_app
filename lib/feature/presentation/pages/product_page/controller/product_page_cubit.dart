@@ -13,8 +13,8 @@ class ProductPageCubit extends Cubit<ProductPageState> {
   Future<void> fetchProduct(String endpoint) async {
     try {
       emit(ProductPageEmptyState());
-      final loadedProductOfFailure = await getProduct(const EndpointParams(
-          endpoint: "6c14c560-15c6-4248-b9d2-b4508df7d4f5"));
+      final loadedProductOfFailure =
+          await getProduct(EndpointParams(endpoint: endpoint));
       loadedProductOfFailure.fold(
         (error) => emit(
           ProductPageErrorState(message: SERVER_FAILURE_MESSAGE),

@@ -53,3 +53,5 @@ const List page = [MainPage(), BagPage(), LikePage(), ProfilePage()];
 const String baseUrl = 'https://run.mocky.io/v3/';
 const SERVER_FAILURE_MESSAGE = 'Server Failure';
 const CACHED_FAILURE_MESSAGE = 'Cache Failure';
+
+const String error = "¯\\_(ツ)_/¯";

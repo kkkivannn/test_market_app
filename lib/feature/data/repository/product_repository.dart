@@ -23,7 +23,6 @@ class ProductRepositoryImpl implements ProductRepository {
       final productModel = await product();
       return Right(productModel);
     } catch (e) {
-      print(e);
       return Left(ServerFailure());
     }
   }

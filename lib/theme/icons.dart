@@ -14,10 +14,15 @@ abstract class SvgImg {
   static const String search = 'icons/Search.svg';
   static const String filter = 'icons/filter.svg';
   static const String pouringLike = 'icons/pouringHeart.svg';
-  static const String back = 'icons/back.svg';
+  static const String exit = 'icons/back.svg';
   static const String camera = 'icons/camera.svg';
   static const String cpu = 'icons/cpu.svg';
   static const String memory = 'icons/memory.svg';
   static const String sd = 'icons/sd.svg';
   static const String select = 'icons/select.svg';
+  static const String adress = 'icons/adress.svg';
+  static const String back = 'icons/backIcon2.svg';
+  static const String plus = 'icons/plus.svg';
+  static const String minus = 'icons/minus.svg';
+  static const String bin = 'icons/bin.svg';
 }
