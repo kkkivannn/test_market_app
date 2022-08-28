@@ -3,18 +3,22 @@ import 'package:flutter_svg/svg.dart';
 import 'package:test_market_app/theme/icons.dart';
 
 class CountWidget extends StatefulWidget {
-  const CountWidget({Key? key}) : super(key: key);
+  final int count;
+  const CountWidget({
+    Key? key,
+    required this.count,
+  }) : super(key: key);
 
   @override
   State<CountWidget> createState() => _CountWidgetState();
 }
 
 class _CountWidgetState extends State<CountWidget> {
-  int count = 0;
+  int countProduct = 1;
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 68,
+      // height: 68,
       decoration: BoxDecoration(
         color: const Color(0xff282843),
         borderRadius: BorderRadius.circular(26),
@@ -25,18 +29,28 @@ class _CountWidgetState extends State<CountWidget> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            InkWell(
-              onTap: () {
-                setState(() {
-                  count--;
-                });
-              },
-              child: SvgPicture.asset(
-                SvgImg.minus,
+            SizedBox(
+              height: 40,
+              width: 30,
+              child: IconButton(
+                onPressed: () {
+                  setState(() {
+                    if (countProduct == 1) {
+                      return;
+                    } else {
+                      countProduct--;
+                    }
+                  });
+                },
+                icon: SvgPicture.asset(
+                  SvgImg.minus,
+                ),
               ),
             ),
             Text(
-              count.toString(),
+              countProduct == widget.count
+                  ? widget.count.toString()
+                  : countProduct.toString(),
               style: const TextStyle(
                 fontFamily: 'MarkPro',
                 fontSize: 20,
@@ -44,16 +58,16 @@ class _CountWidgetState extends State<CountWidget> {
                 color: Colors.white,
               ),
             ),
-            InkWell(
-              onTap: () {
-                setState(() {
-                  count++;
-                });
-              },
-              child: SizedBox(
-                height: 10,
-                width: 10,
-                child: SvgPicture.asset(
+            SizedBox(
+              height: 40,
+              width: 30,
+              child: IconButton(
+                onPressed: () {
+                  setState(() {
+                    countProduct++;
+                  });
+                },
+                icon: SvgPicture.asset(
                   SvgImg.plus,
                 ),
               ),

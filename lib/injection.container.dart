@@ -13,6 +13,7 @@ import 'package:test_market_app/feature/domain/repositories/product.dart';
 import 'package:test_market_app/feature/domain/usecases/get_basket.dart';
 import 'package:test_market_app/feature/domain/usecases/get_product.dart';
 import 'package:test_market_app/feature/presentation/pages/bag_page/controller/bag_page_cubit.dart';
+import 'package:test_market_app/feature/presentation/pages/home_page/controller/home_screen_cubit.dart';
 import 'package:test_market_app/feature/presentation/pages/main/controller/main_page_cubit.dart';
 import 'package:test_market_app/feature/presentation/pages/product_page/controller/product_page_cubit.dart';
 import 'feature/domain/usecases/get_best_seller.dart';
@@ -23,6 +24,7 @@ Future<void> init() async {
   sl.registerFactory(() => MainPageCubit(getBestSeller: sl()));
   sl.registerFactory(() => ProductPageCubit(getProduct: sl()));
   sl.registerFactory(() => BagPageCubit(getBasket: sl()));
+  sl.registerFactory(() => HomeScreenCubit(getBasket: sl()));
   //Usecases
   sl.registerLazySingleton(() => GetBestSeller(sl()));
   sl.registerLazySingleton(() => GetProduct(sl()));

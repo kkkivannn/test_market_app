@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 
 // Package imports:
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:test_market_app/feature/presentation/pages/home_page/controller/home_screen_cubit.dart';
 
 // Project imports:
 import 'package:test_market_app/feature/presentation/pages/home_page/view/home.dart';
@@ -41,6 +42,9 @@ class _MyAppState extends State<MyApp> {
         ),
         BlocProvider<BagPageCubit>(
           create: (context) => sl<BagPageCubit>(),
+        ),
+        BlocProvider<HomeScreenCubit>(
+          create: (context) => sl<HomeScreenCubit>(),
         ),
       ],
       child: const HomePage(),

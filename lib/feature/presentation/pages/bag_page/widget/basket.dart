@@ -7,7 +7,7 @@ import 'package:test_market_app/theme/icons.dart';
 
 import 'checkout_button.dart';
 
-class Basket extends StatelessWidget {
+class Basket extends StatefulWidget {
   final List<BasketEntiti> product;
   final int total;
   final String delivery;
@@ -17,6 +17,24 @@ class Basket extends StatelessWidget {
     required this.total,
     required this.delivery,
   }) : super(key: key);
+
+  @override
+  State<Basket> createState() => _BasketState();
+}
+
+class _BasketState extends State<Basket> {
+  int countProduct = 1;
+  @override
+  void initState() {
+    int num = 1;
+    for (int i = 1; i < widget.product.length; i++) {
+      num = i - 1;
+      if (widget.product[num].id == i) {
+        countProduct++;
+      }
+    }
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +54,7 @@ class Basket extends StatelessWidget {
                 physics: const BouncingScrollPhysics(),
                 scrollDirection: Axis.vertical,
                 children: List.generate(
-                  product.length,
+                  widget.product.length,
                   (index) => Padding(
                     padding: const EdgeInsets.only(
                       top: 23,
@@ -50,7 +68,7 @@ class Basket extends StatelessWidget {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(10),
                             child: Image.network(
-                              product[index].images,
+                              widget.product[index].images,
                               height: 88,
                               width: 88,
                               fit: BoxFit.cover,
@@ -89,7 +107,7 @@ class Basket extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               Text(
-                                product[index].title,
+                                widget.product[index].title,
                                 style: const TextStyle(
                                   fontFamily: 'MarkPro',
                                   fontSize: 20,
@@ -98,7 +116,7 @@ class Basket extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                '\u0024${product[index].price}',
+                                '\u0024${widget.product[index].price}',
                                 style: TextStyle(
                                   fontFamily: 'MarkPro',
                                   fontSize: 20,
@@ -109,7 +127,7 @@ class Basket extends StatelessWidget {
                             ],
                           ),
                         ),
-                        const CountWidget(),
+                        CountWidget(count: countProduct),
                         InkWell(
                           child: SvgPicture.asset(SvgImg.bin),
                         ),
@@ -141,7 +159,7 @@ class Basket extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        '\u0024$total us',
+                        '\u0024${widget.total} us',
                         style: const TextStyle(
                           fontFamily: 'MarkPro',
                           fontSize: 15,
@@ -168,7 +186,7 @@ class Basket extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        delivery,
+                        widget.delivery,
                         style: const TextStyle(
                           fontFamily: 'MarkPro',
                           fontSize: 15,
