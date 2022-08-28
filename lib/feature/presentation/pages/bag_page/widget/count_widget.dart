@@ -18,7 +18,6 @@ class _CountWidgetState extends State<CountWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // height: 68,
       decoration: BoxDecoration(
         color: const Color(0xff282843),
         borderRadius: BorderRadius.circular(26),
